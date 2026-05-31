@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Urinary Catheterization & Monitoring Sterility — Surgical Technologist Study Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0a1628;
+    --navy-mid: #132240;
+    --navy-light: #1e3560;
+    --teal: #00b4b0;
+    --teal-dim: #007f7d;
+    --teal-pale: #e0f7f7;
+    --gold: #c8963e;
+    --gold-pale: #fdf3e2;
+    --red: #b03030;
+    --red-pale: #fdeaea;
+    --green: #1e7a4a;
+    --green-pale: #e5f5ec;
+    --purple: #5b3d9e;
+    --purple-pale: #eeebf9;
+    --slate: #4a5568;
+    --muted: #718096;
+    --border: #dde3ec;
+    --bg: #f5f7fb;
+    --white: #ffffff;
+    --text: #1a202c;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.7; min-height: 100vh; }
+
+  .header { background: var(--navy); padding: 2.5rem 2rem 2rem; position: relative; overflow: hidden; }
+  .header::before { content: ''; position: absolute; top: -80px; right: -80px; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle, rgba(0,180,176,0.15) 0%, transparent 70%); }
+  .header::after { content: ''; position: absolute; bottom: -40px; left: 22%; width: 240px; height: 240px; border-radius: 50%; background: radial-gradient(circle, rgba(91,61,158,0.1) 0%, transparent 70%); }
+  .header-inner { max-width: 960px; margin: 0 auto; position: relative; }
+  .header-kicker { font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--teal); font-weight: 600; margin-bottom: 8px; }
+  .header h1 { font-family: 'DM Serif Display', serif; font-size: 2.2rem; color: #fff; line-height: 1.15; margin-bottom: 8px; }
+  .header-sub { color: rgba(255,255,255,0.5); font-size: 13px; }
+  .header-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 1.25rem; }
+  .hbadge { font-size: 11px; font-weight: 600; letter-spacing: 0.5px; padding: 4px 12px; border-radius: 100px; border: 1px solid rgba(255,255,255,0.18); color: rgba(255,255,255,0.65); background: rgba(255,255,255,0.07); }
+
+  .nav-wrap { background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+  .nav-inner { max-width: 960px; margin: 0 auto; display: flex; overflow-x: auto; scrollbar-width: none; }
+  .nav-inner::-webkit-scrollbar { display: none; }
+  .nav-tab { flex-shrink: 0; padding: 1rem 1.4rem; font-size: 13px; font-weight: 600; letter-spacing: 0.3px; color: var(--muted); border: none; background: transparent; cursor: pointer; border-bottom: 3px solid transparent; transition: color 0.18s, border-color 0.18s; white-space: nowrap; }
+  .nav-tab:hover { color: var(--text); }
+  .nav-tab.active { color: var(--navy); border-bottom-color: var(--teal); }
+  .tab-icon { display: inline-block; margin-right: 6px; font-size: 14px; }
+
+  .content-wrap { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+  .section { display: none; }
+  .section.active { display: block; }
+
+  .section-heading { font-family: 'DM Serif Display', serif; font-size: 1.55rem; color: var(--navy); margin-bottom: 4px; }
+  .section-sub { color: var(--muted); font-size: 13px; margin-bottom: 1.75rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--border); }
+  .sub-label { font-size: 11px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; color: var(--muted); margin: 1.5rem 0 0.75rem; }
+
+  .alert { display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; border-radius: 10px; margin-bottom: 1.25rem; font-size: 14px; line-height: 1.6; }
+  .alert-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+  .alert-teal   { background: var(--teal-pale);   border-left: 4px solid var(--teal); }
+  .alert-gold   { background: var(--gold-pale);   border-left: 4px solid var(--gold); }
+  .alert-red    { background: var(--red-pale);    border-left: 4px solid var(--red); }
+  .alert-green  { background: var(--green-pale);  border-left: 4px solid var(--green); }
+  .alert-purple { background: var(--purple-pale); border-left: 4px solid var(--purple); }
+  .alert-navy   { background: #e8ecf4;            border-left: 4px solid var(--navy-light); }
+
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1rem; margin-bottom: 1.25rem; }
+  .card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem 1.35rem; }
+  .card-full { grid-column: 1 / -1; }
+  .card-title { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .card-title-icon { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 6px; font-size: 13px; }
+  .icon-teal   { background: var(--teal-pale);   color: var(--teal-dim); }
+  .icon-gold   { background: var(--gold-pale);   color: var(--gold); }
+  .icon-red    { background: var(--red-pale);    color: var(--red); }
+  .icon-green  { background: var(--green-pale);  color: var(--green); }
+  .icon-navy   { background: #e8ecf4;            color: var(--navy); }
+  .icon-purple { background: var(--purple-pale); color: var(--purple); }
+
+  ul.detail-list { list-style: none; padding: 0; }
+  ul.detail-list li { padding: 7px 0 7px 22px; position: relative; font-size: 14px; color: var(--slate); border-bottom: 1px solid var(--bg); line-height: 1.6; }
+  ul.detail-list li:last-child { border-bottom: none; }
+  ul.detail-list li::before { content: '▸'; position: absolute; left: 0; color: var(--teal); font-size: 11px; top: 9px; }
+  ul.detail-list li strong { color: var(--text); }
+  ul.detail-list ul.sub-list li::before { content: none; }
+  ul.sub-list { margin-top: 6px; padding-left: 1rem; list-style: disc; color: var(--muted); font-size: 13px; }
+  ul.sub-list li { padding: 2px 0; border: none; }
+
+  .steps { display: flex; flex-direction: column; gap: 0; counter-reset: step; position: relative; padding-left: 38px; }
+  .steps::before { content: ''; position: absolute; left: 15px; top: 20px; bottom: 20px; width: 2px; background: var(--border); }
+  .step-item { position: relative; padding: 0 0 18px 0; counter-increment: step; }
+  .step-item::before { content: counter(step); position: absolute; left: -38px; top: 0; width: 30px; height: 30px; border-radius: 50%; background: var(--navy); color: #fff; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; z-index: 1; }
+  .step-item p { font-size: 14px; color: var(--slate); line-height: 1.6; }
+  .step-item strong { color: var(--text); font-weight: 600; }
+
+  .badge { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.3px; padding: 3px 9px; border-radius: 100px; }
+  .badge-teal   { background: var(--teal-pale);   color: var(--teal-dim); }
+  .badge-red    { background: var(--red-pale);    color: var(--red); }
+  .badge-gold   { background: var(--gold-pale);   color: #a07020; }
+  .badge-green  { background: var(--green-pale);  color: var(--green); }
+  .badge-navy   { background: #e8ecf4;            color: var(--navy-light); }
+  .badge-purple { background: var(--purple-pale); color: var(--purple); }
+
+  .data-table { width: 100%; border-collapse: collapse; font-size: 13.5px; background: var(--white); border-radius: 10px; overflow: hidden; border: 1px solid var(--border); margin-bottom: 1.25rem; }
+  .data-table th { background: var(--navy); color: #fff; padding: 11px 14px; text-align: left; font-weight: 600; font-size: 12px; letter-spacing: 0.5px; }
+  .data-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); color: var(--slate); vertical-align: top; line-height: 1.5; }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table tr:nth-child(even) td { background: var(--bg); }
+
+  .accordion { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 1.25rem; }
+  .acc-head { display: flex; align-items: center; gap: 12px; padding: 14px 18px; background: var(--navy); cursor: pointer; user-select: none; }
+  .acc-head:hover { background: var(--navy-mid); }
+  .acc-head-left { flex: 1; }
+  .acc-head-tag { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--teal); margin-bottom: 2px; }
+  .acc-head-title { font-size: 15px; font-weight: 600; color: #fff; }
+  .acc-chevron { color: rgba(255,255,255,0.5); font-size: 16px; transition: transform 0.2s; flex-shrink: 0; }
+  .acc-chevron.open { transform: rotate(180deg); }
+  .acc-body { display: none; padding: 18px; border-top: 1px solid var(--border); }
+  .acc-body.open { display: block; }
+
+  /* STAT ROW */
+  .stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; margin-bottom: 1.25rem; }
+  .stat-box { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 14px 12px; text-align: center; }
+  .stat-num { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--navy); line-height: 1; margin-bottom: 4px; }
+  .stat-label { font-size: 12px; color: var(--muted); line-height: 1.4; }
+
+  /* INDICATOR CLASS CARDS */
+  .ci-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-bottom: 1.25rem; }
+  .ci-card { border-radius: 10px; padding: 14px; border: 1px solid var(--border); background: var(--white); }
+  .ci-class { font-family: 'DM Serif Display', serif; font-size: 1.1rem; margin-bottom: 4px; }
+  .ci-name { font-size: 11px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 8px; }
+  .ci-desc { font-size: 13px; color: var(--slate); line-height: 1.5; }
+  .ci-1 { border-top: 3px solid #007f7d; }  .ci-1 .ci-class { color: #007f7d; }  .ci-1 .ci-name { color: #007f7d; }
+  .ci-2 { border-top: 3px solid #718096; }  .ci-2 .ci-class { color: #718096; }  .ci-2 .ci-name { color: #718096; }
+  .ci-3 { border-top: 3px solid #c8963e; }  .ci-3 .ci-class { color: #c8963e; }  .ci-3 .ci-name { color: #c8963e; }
+  .ci-4 { border-top: 3px solid #5b3d9e; }  .ci-4 .ci-class { color: #5b3d9e; }  .ci-4 .ci-name { color: #5b3d9e; }
+  .ci-5 { border-top: 3px solid #1e7a4a; }  .ci-5 .ci-class { color: #1e7a4a; }  .ci-5 .ci-name { color: #1e7a4a; }
+  .ci-6 { border-top: 3px solid #0a1628; }  .ci-6 .ci-class { color: #0a1628; }  .ci-6 .ci-name { color: #0a1628; }
+
+  /* CALLOUT HIGHLIGHT */
+  .highlight-box { background: var(--navy); border-radius: 10px; padding: 14px 18px; margin-bottom: 1.25rem; display: flex; gap: 12px; align-items: flex-start; }
+  .highlight-box-icon { font-size: 18px; flex-shrink: 0; }
+  .highlight-box p { font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.6; }
+  .highlight-box strong { color: #fff; }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 1.5rem 0; }
+
+  @media(max-width:600px){
+    .header h1 { font-size: 1.6rem; }
+    .card-grid { grid-template-columns: 1fr; }
+    .stat-row  { grid-template-columns: repeat(2,1fr); }
+    .ci-grid   { grid-template-columns: repeat(2,1fr); }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-inner">
+    <div class="header-kicker">AST Guidelines for Best Practices · CST Reference</div>
+    <h1>Urinary Catheterization & Monitoring Sterility</h1>
+    <p class="header-sub">CAUTI Prevention · Chemical & Biological Indicators · Implant Quarantine — Study Guide</p>
+    <div class="header-badges">
+      <span class="hbadge">Principles of Asepsis</span>
+      <span class="hbadge">CDC CAUTI Guidelines 2009</span>
+      <span class="hbadge">ANSI / AAMI ST79</span>
+      <span class="hbadge">AAMI ST41</span>
+      <span class="hbadge">SSI Prevention</span>
+    </div>
+  </div>
+</div>
+
+<div class="nav-wrap">
+  <div class="nav-inner">
+    <button class="nav-tab active" onclick="showTab('cath', this)"><span class="tab-icon">🚿</span>Urinary Catheterization</button>
+    <button class="nav-tab" onclick="showTab('cauti', this)"><span class="tab-icon">🛡️</span>CAUTI Prevention</button>
+    <button class="nav-tab" onclick="showTab('sterility', this)"><span class="tab-icon">🔬</span>Sterility Indicators</button>
+    <button class="nav-tab" onclick="showTab('implants', this)"><span class="tab-icon">📋</span>Implants & Reference</button>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <!-- ════════════════════════════
+       TAB 1: URINARY CATHETERIZATION
+  ════════════════════════════ -->
+  <div id="cath" class="section active">
+    <h2 class="section-heading">Urinary Catheterization</h2>
+    <p class="section-sub">Guidelines I – III: CST qualifications, indications for catheter use, sterile technique for insertion, catheter sizing, and balloon selection. Revised April 14, 2017.</p>
+
+    <div class="alert alert-teal">
+      <span class="alert-icon">🎯</span>
+      <div><strong>Core principle:</strong> To prevent the patient from acquiring a UTI and maintain metabolic homeostasis, the principles of asepsis and sterile technique must be strictly followed when inserting and removing a urinary catheter. UTIs are the second most common healthcare-associated infection, and most are linked to urinary catheterization.</div>
+    </div>
+
+    <p class="sub-label">UTI — epidemiology & risk factors</p>
+    <div class="stat-row">
+      <div class="stat-box">
+        <div class="stat-num">#2</div>
+        <div class="stat-label">Most common healthcare-associated infection — 8–10 million annual provider visits</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">&gt;50%</div>
+        <div class="stat-label">Lifetime UTI risk for women; 11 million women per year report a UTI</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">80–90%</div>
+        <div class="stat-label">Of UTIs caused by Escherichia coli (E. coli)</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">1 in 5</div>
+        <div class="stat-label">Women will acquire a UTI at some point in life; 20% → recurrent; 30% of those → another; 80% of that group → recurrent</div>
+      </div>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-title"><span class="card-title-icon icon-red">⚠️</span>Risk factors for CAUTI</div>
+        <ul class="detail-list">
+          <li><strong>#1 risk factor: prolonged use of an indwelling catheter</strong></li>
+          <li>Method of catheterization</li>
+          <li>Not maintaining a closed drainage system</li>
+          <li>Patient's susceptibility due to weakened immune system</li>
+          <li><strong>High-risk groups:</strong> women, elderly, immunocompromised, diabetics, spinal injury patients (hemiplegic, quadriplegic), pregnant women (4–5% develop UTI)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title"><span class="card-title-icon icon-teal">🎓</span>Guideline I — CST qualifications</div>
+        <ul class="detail-list">
+          <li>Must be a graduate of a <strong>CAAHEP-accredited program or ABHES-accredited program</strong> and certified CST with currency</li>
+          <li>CSTs have detailed knowledge of genitourinary anatomy to prevent insertion/removal errors and patient injury</li>
+          <li>Experts in principles of asepsis and sterile technique for catheter insertion, removal, and specimen collection</li>
+          <li>Qualified for catheter insertion, removal, and maintenance per Core Curriculum for Surgical Technology requirements</li>
+          <li><strong>Guideline II:</strong> Must complete training in accessory devices (stylet, guide wire, filiforms can cause patient injury) in simulated training sessions before using on patients</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="sub-label">Guideline III — Appropriate indications for indwelling catheter use</p>
+    <div class="alert alert-gold">
+      <span class="alert-icon">⚠️</span>
+      <div><strong>Catheters should only be used when medically necessary</strong> — not as part of routine surgical patient care. The use and duration must be minimized, especially in high-risk patients.</div>
+    </div>
+
+    <div class="card" style="margin-bottom:1.25rem">
+      <div class="card-title"><span class="card-title-icon icon-green">✅</span>Appropriate perioperative indications (CDC HICPAC 2009)</div>
+      <ul class="detail-list">
+        <li>Lengthy surgical procedure</li>
+        <li>Patients undergoing genitourinary surgery</li>
+        <li>Anticipated need to monitor intraoperative urinary output</li>
+        <li>Anticipated need for large volume of infusions or diuretics during surgery</li>
+        <li>Anticipated postoperative reasons — e.g., prolonged epidural anesthesia recovery, transurethral prostate removal</li>
+        <li><strong>Removal timing:</strong> the catheter should be removed <strong>within 24 hours postoperatively</strong> unless there are specific indications for prolonged use</li>
+        <li>The catheter must be removed as soon as it is no longer needed — minimize duration especially in elderly, immunocompromised patients, and women</li>
+      </ul>
+    </div>
+
+    <p class="sub-label">Guideline III — Sterile technique for insertion</p>
+    <div class="card" style="margin-bottom:1.25rem">
+      <div class="card-title"><span class="card-title-icon icon-teal">🧤</span>Sterile catheter kit contents & technique</div>
+      <ul class="detail-list">
+        <li><strong>Hand wash performed immediately before and after</strong> insertion, removal, or manipulation of the catheter device or insertion site</li>
+        <li>Use a sterile catheter kit containing: sterile gloves (donned using the <strong>open gloving technique</strong>); fenestrated drape; sponges; antiseptic solution for cleansing the urethral meatus; single-use packet of lubricant jelly; catheter with collection bag</li>
+        <li>Use a <strong>preconnected, sealed catheter-tubing junction</strong> to maintain a closed system</li>
+        <li>Antimicrobial/antiseptic-impregnated catheters should <strong>not</strong> be routinely used</li>
+        <li>Routine use of antiseptic lubricant jelly is <strong>not</strong> necessary</li>
+        <li>Use the <strong>smallest diameter catheter</strong> that will accomplish drainage unless otherwise ordered — minimizes bladder neck and urethral trauma</li>
+        <li>Secure the catheter tubing after insertion to prevent urethral traction and inadvertent catheter removal (especially when moving patient from OR bed to stretcher)</li>
+      </ul>
+    </div>
+
+    <p class="sub-label">Catheter sizing & balloon selection</p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-title"><span class="card-title-icon icon-green">✅</span>Correct balloon sizes</div>
+        <ul class="detail-list">
+          <li><strong>Pediatric patients:</strong> 1.5 mL or 3 mL balloon</li>
+          <li><strong>Adult patients:</strong> 5 mL balloon, filled per manufacturer instructions</li>
+          <li>Pretest the balloon based on manufacturer's recommendations — some manufacturers (e.g., Bard) pretest each Foley catheter before packaging, so pretesting may not be necessary</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title"><span class="card-title-icon icon-red">🚫</span>30 mL balloon — never use</div>
+        <ul class="detail-list">
+          <li>When filled, the 30 mL balloon positions itself high in the bladder</li>
+          <li>Places undue pressure on the bladder neck and pelvic floor → bladder spasms and leakage</li>
+          <li>Results in stasis — drainage eyes are positioned superior to the balloon (above the urine)</li>
+          <li><strong>Silicone balloons:</strong> pretesting not recommended — silicone can form a cuff or crease at the balloon area that causes urethral trauma during insertion and removal</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════
+       TAB 2: CAUTI PREVENTION
+  ════════════════════════════ -->
+  <div id="cauti" class="section">
+    <h2 class="section-heading">CAUTI Prevention</h2>
+    <p class="section-sub">Guidelines III – V: catheter maintenance, drainage system integrity, urine specimen collection, device selection, and quality improvement programs.</p>
+
+    <div class="alert alert-teal">
+      <span class="alert-icon">🎯</span>
+      <div><strong>Core principle:</strong> A sterile, continuously closed drainage system must be maintained at all times. Any break in the system requires immediate replacement using sterile technique. A reminder-based CAUTI reduction system has been shown to reduce CAUTI rates by <strong>53%</strong>.</div>
+    </div>
+
+    <p class="sub-label">Guideline III — Catheter maintenance rules</p>
+
+    <div class="accordion">
+      <div class="acc-head" onclick="toggleAcc(this)">
+        <div class="acc-head-left">
+          <div class="acc-head-tag">Guideline III · Closed System</div>
+          <div class="acc-head-title">Maintaining the closed drainage system</div>
+        </div>
+        <span class="acc-chevron">▼</span>
+      </div>
+      <div class="acc-body">
+        <ul class="detail-list">
+          <li>A <strong>sterile, continuously closed drainage system</strong> must be maintained at all times to prevent CAUTI</li>
+          <li>If a <strong>break in sterile technique, disconnection, or urine leakage</strong> occurs: the catheter and collecting bag must be replaced using sterile technique and sterile supplies</li>
+          <li><strong>Unobstructed urine flow</strong> must be maintained; backflow of urine from the bag must be prevented</li>
+          <li>Catheter and collecting tube must be kept from <strong>kinking and bending</strong></li>
+          <li>The collecting bag must <strong>always be kept below the level of the bladder</strong> to prevent backflow — and must not be placed on the floor</li>
+          <li>This is especially critical when <strong>transferring the patient between the stretcher and OR bed</strong> and vice versa</li>
+          <li><strong>No clamp</strong> should be placed on the catheter or collecting tube when emptying the collection bag or removing the catheter</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="acc-head" onclick="toggleAcc(this)">
+        <div class="acc-head-left">
+          <div class="acc-head-tag">Guideline III · Emptying the Bag</div>
+          <div class="acc-head-title">Emptying the collecting bag during lengthy procedures</div>
+        </div>
+        <span class="acc-chevron">▼</span>
+      </div>
+      <div class="acc-body">
+        <ul class="detail-list">
+          <li>During lengthy surgical procedures or prolonged PACU stays, the collecting bag should be emptied using a <strong>clean collecting container</strong></li>
+          <li>The CST or HCW must wear <strong>PPE: gloves and protective eyewear</strong></li>
+          <li>Avoid splashing; prevent the drainage opening of the collecting bag from contacting the nonsterile collecting container</li>
+          <li>The amount of urine must be <strong>recorded in the patient's operative record or PACU record</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="acc-head" onclick="toggleAcc(this)">
+        <div class="acc-head-left">
+          <div class="acc-head-tag">Guideline III · Urine Specimen</div>
+          <div class="acc-head-title">Collecting a sterile urine specimen</div>
+        </div>
+        <span class="acc-chevron">▼</span>
+      </div>
+      <div class="acc-body">
+        <ul class="detail-list">
+          <li>Urine specimen for culture/urinalysis must be obtained using the <strong>needleless sampling port</strong> with a sterile syringe/cannula adaptor</li>
+          <li>The port must be <strong>cleansed with a disinfectant</strong> before accessing</li>
+          <li>Urine must not be obtained from the collection bag for culture — specimen from the bag is not considered sterile</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="sub-label">Guideline IV — Catheter device selection process</p>
+    <div class="card" style="margin-bottom:1.25rem">
+      <div class="card-title"><span class="card-title-icon icon-navy">👥</span>Multidisciplinary evaluation team</div>
+      <ul class="detail-list">
+        <li>Team must consist of <strong>non-managerial employees who provide direct patient care</strong>: CSTs, surgeons, RNs, infection control officer, materials management/purchasing, and risk management</li>
+        <li>Gather data on current device: ease of use, effectiveness, types and frequencies of CAUTIs</li>
+        <li>Selection and priority criteria: <strong>patient safety; device performance; ease and efficiency of use; user acceptance</strong></li>
+        <li>Gather information on available products from manufacturers, evidence-based research, and feedback from other surgery departments already using the products; request samples</li>
+        <li>Develop an <strong>anonymous, one-page evaluation form</strong> with written comment section; establish a time period for evaluation</li>
+        <li>Tabulate and analyze results — the <strong>final decision must not be solely based on cost</strong>; also consider training costs and potential CAUTI-reduction cost savings</li>
+        <li>After implementation: monitor correct use, gather ongoing feedback, and identify if device needs to be replaced</li>
+      </ul>
+    </div>
+
+    <p class="sub-label">Guideline V — Quality improvement (QI) program</p>
+    <div class="highlight-box" style="margin-bottom:1.25rem">
+      <span class="highlight-box-icon">📊</span>
+      <p>A systematic review found that using a <strong>"urinary catheter reminder" checklist</strong> — to identify all patients with catheters and assess the need for continued catheterization — <strong>reduced the CAUTI rate by 53%.</strong></p>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-title"><span class="card-title-icon icon-teal">📋</span>QI program components</div>
+        <ul class="detail-list">
+          <li>Assure appropriate indications for catheter use</li>
+          <li>Identify when catheters are no longer needed</li>
+          <li>Ensure adherence to asepsis and hand hygiene practices</li>
+          <li>Multidisciplinary team: CSTs, surgeons, RNs, infection control officer, risk management</li>
+          <li>System of documentation; continuing education and performance feedback</li>
+          <li>Procedure-specific guidelines for insertion, maintenance, and removal</li>
+          <li>Annual review of policies and procedures</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title"><span class="card-title-icon icon-green">📄</span>Required documentation in patient record</div>
+        <ul class="detail-list">
+          <li>Physician order for catheter placement</li>
+          <li>Indications for catheter insertion</li>
+          <li>Date and time of catheter insertion</li>
+          <li>Name and credentials of individual who inserted the catheter</li>
+          <li>Date and time catheter was removed</li>
+          <li>Recorded in a <strong>standard format</strong> for data collection and QI purposes</li>
+          <li><strong>Electronic documentation</strong> that can be easily searched is recommended</li>
+        </ul>
+      </div>
+      <div class="card card-full">
+        <div class="card-title"><span class="card-title-icon icon-purple">📈</span>Measuring QI program success</div>
+        <ul class="detail-list">
+          <li>Success measured by <strong>decreased CAUTI rates</strong> and <strong>decreased catheter-days</strong></li>
+          <li>Share QI results with surgery personnel to promote awareness and "buy-in"</li>
+          <li>Track and share: hand hygiene compliance rate, catheter removal rates in PACU, and CAUTI rates in the HDO</li>
+          <li>Collect formal (surveys) and informal (verbal) feedback from surgical personnel on what is working and what can be improved</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════
+       TAB 3: STERILITY INDICATORS
+  ════════════════════════════ -->
+  <div id="sterility" class="section">
+    <h2 class="section-heading">Sterility Indicators</h2>
+    <p class="section-sub">Guidelines I – III: chemical indicators (all 6 classes), biological indicators, physical monitoring, and quality assurance systems. Revised April 14, 2017.</p>
+
+    <div class="alert alert-teal">
+      <span class="alert-icon">🎯</span>
+      <div><strong>Core principle:</strong> All items handled by sterile team members and those contacting patient tissues must be sterile to prevent SSI. Guaranteeing sterility requires a quality control system: physical monitoring of sterilization machines, chemical indicators (CI), and biological indicators (BI). Indicators also help pinpoint and resolve processing failures.</div>
+    </div>
+
+    <div class="alert alert-red">
+      <span class="alert-icon">⚠️</span>
+      <div><strong>Critical distinction:</strong> Chemical indicators (CI) demonstrate that a package was exposed to specific sterilization processing conditions — they do <em>not</em> prove the enclosed items are sterile. Only biological indicators (BI) provide a direct measure of the <strong>lethality</strong> of the sterilization process.</div>
+    </div>
+
+    <p class="sub-label">Guideline I — Class 1 external CI (Process Indicator)</p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-title"><span class="card-title-icon icon-teal">📦</span>Purpose & placement</div>
+        <ul class="detail-list">
+          <li>Affixed to or printed on the <strong>outside</strong> of every HDO-assembled instrument tray, package, or rigid container</li>
+          <li>Exception: packages that allow visualization of the internal CI (e.g., paper-plastic peel packs with clear plastic side) do not require a separate external CI</li>
+          <li>Types: sterilizer indicator tape, indicating labels, indicating strips, or color-changing printed legends — chemically impregnated</li>
+          <li>Upon exposure to sterilization: visible, <strong>even color change</strong> (the "endpoint" response)</li>
+          <li>Commercial packages typically include an external color-changing printed legend that must be clearly observable to the CST</li>
+          <li>Must be used per manufacturer's IFU; manufacturers are required to provide written IFU on storage, handling, and use</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title"><span class="card-title-icon icon-navy">🔍</span>CST interpretation responsibilities</div>
+        <ul class="detail-list">
+          <li>CST must <strong>visualize the external CI</strong> (or internal CI in peel packs) before opening any package in the OR to confirm sterilization exposure and even color change</li>
+          <li>If the CST's interpretation suggests the package was inadequately exposed to sterilization conditions: <strong>do not open the package</strong> — return to the Central Sterile Processing Department (CSPD) for reprocessing</li>
+          <li>External CIs help detect potential sterilization failures</li>
+          <li>Part of overall quality assurance program alongside physical monitoring and BIs</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="sub-label">Guideline II — Internal CI (Classes 3, 4, 5, or 6)</p>
+    <div class="card" style="margin-bottom:1.25rem">
+      <div class="card-title"><span class="card-title-icon icon-purple">🔬</span>Internal CI — retrieval and interpretation</div>
+      <ul class="detail-list">
+        <li>Required within each HDO-assembled package per ANSI/AAMI ST79</li>
+        <li>Cannot be retrieved without opening the package — must be retrieved <strong>at the time the package is to be used</strong></li>
+        <li>Must be retrieved, visualized, and interpreted <strong>during preoperative case management</strong> (while setting up the sterile back table and Mayo stand)</li>
+        <li>If the CST determines sterilization was inadequate: contents are <strong>non-sterile</strong> — immediately remove the package from the sterile field</li>
+        <li>CST must determine <strong>how much of the sterile field was potentially contaminated</strong>:
+          <ul class="sub-list">
+            <li>Example 1: rigid container on basin stand not yet placed on back table → back table does not need to be broken down</li>
+            <li>Example 2: sterile linen towels tossed onto back table that may have touched other sterile items → the towels and all touched items are non-sterile; entire affected area must be broken down</li>
+          </ul>
+        </li>
+        <li>Hand the non-sterile package to the circulator — return to CSPD <strong>with the internal CI and load identification information</strong> for reprocessing</li>
+        <li><strong>CST must change gloves</strong> — gloves are contaminated from handling non-sterile items</li>
+      </ul>
+    </div>
+
+    <p class="sub-label">The six classes of chemical indicators</p>
+    <div class="ci-grid">
+      <div class="ci-card ci-1">
+        <div class="ci-class">Class 1</div>
+        <div class="ci-name">Process Indicator</div>
+        <div class="ci-desc">External CI — affixed to outside of HDO-assembled packages. Distinguishes processed from unprocessed. Does not prove sterility.</div>
+      </div>
+      <div class="ci-card ci-2">
+        <div class="ci-class">Class 2</div>
+        <div class="ci-name">Specific Test Indicator</div>
+        <div class="ci-desc">Used for specific sterilizer tests. Example: the Bowie-Dick air-removal test indicator for pre-vacuum steam sterilizers.</div>
+      </div>
+      <div class="ci-card ci-3">
+        <div class="ci-class">Class 3</div>
+        <div class="ci-name">Single-Variable Indicator</div>
+        <div class="ci-desc">Reacts to <strong>one</strong> critical sterilization parameter (e.g., temperature only). May be used to meet the internal CI recommendation.</div>
+      </div>
+      <div class="ci-card ci-4">
+        <div class="ci-class">Class 4</div>
+        <div class="ci-name">Multi-Variable Indicator</div>
+        <div class="ci-desc">Reacts to <strong>two or more</strong> critical parameters of the sterilization cycle. May be used to meet the internal CI recommendation.</div>
+      </div>
+      <div class="ci-card ci-5">
+        <div class="ci-class">Class 5</div>
+        <div class="ci-name">Integrating Indicator</div>
+        <div class="ci-desc">Reacts to <strong>all</strong> critical parameters (time, temperature, sterilizing agent). Used with a BI in PCD for implant loads. Cannot replace a BI.</div>
+      </div>
+      <div class="ci-card ci-6">
+        <div class="ci-class">Class 6</div>
+        <div class="ci-name">Emulating Indicator</div>
+        <div class="ci-desc">Changes color when exposed to critical variables for a <strong>specific sterilization cycle</strong>. Within a PCD, may be used to monitor all sterilizer loads.</div>
+      </div>
+    </div>
+
+    <p class="sub-label">Guideline III — Biological indicators (BI)</p>
+    <div class="alert alert-green">
+      <span class="alert-icon">🧫</span>
+      <div><strong>BIs are the only sterilization monitoring device</strong> that provides a <strong>direct measure of the lethality</strong> of the sterilization process. They use microbes in the spore stage that are highly resistant to the type of sterilization being monitored.</div>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-title"><span class="card-title-icon icon-green">🧫</span>BI spore selection</div>
+        <ul class="detail-list">
+          <li><strong>Steam sterilization:</strong> Geobacillus stearothermophilus (formerly Bacillus stearothermophilus)</li>
+          <li><strong>Ethylene oxide (EtO) sterilization:</strong> Bacillus atrophaeus</li>
+          <li>Some BIs contain the spore with an <strong>enzyme-based early-readout</strong> capability — allows faster results</li>
+          <li>BIs must be used per the manufacturer's written IFU, including storage, handling, use, and interpretation of incubation results</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title"><span class="card-title-icon icon-navy">📅</span>BI monitoring frequency</div>
+        <ul class="detail-list">
+          <li>BIs used within <strong>PCDs (process challenge devices)</strong> for routine sterilizer monitoring</li>
+          <li>Required: <strong>at least weekly</strong></li>
+          <li>Recommended: <strong>every day the sterilizer is used</strong></li>
+          <li>PCD may be a user-assembled challenge test pack or a commercially available disposable test pack; assembled per ANSI/AAMI ST79 (steam) or ST41 (EtO)</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="sub-label">Physical monitoring</p>
+    <div class="card" style="margin-bottom:1.25rem">
+      <div class="card-title"><span class="card-title-icon icon-navy">🖥️</span>Physical monitoring of sterilization machines</div>
+      <ul class="detail-list">
+        <li>Physical monitors are the <strong>gauges or displays on the sterilization machine</strong> indicating pressure, temperature, and time</li>
+        <li>Data is recorded on a record chart or computer printout <strong>for each load</strong></li>
+        <li>Physical monitoring is part of the overall quality assurance program — used alongside external CIs, internal CIs, and BIs</li>
+        <li>Specific types of internal CIs may help detect specific machine malfunctions: air leaks, improper temperature, or poor quality steam</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════
+       TAB 4: IMPLANTS & REFERENCE
+  ════════════════════════════ -->
+  <div id="implants" class="section">
+    <h2 class="section-heading">Implants & Reference</h2>
+    <p class="section-sub">Implant quarantine rules, emergency release protocol, positive BI recall procedure, and complete glossary for both urinary catheterization and monitoring sterility guidelines.</p>
+
+    <div class="alert alert-red">
+      <span class="alert-icon">🚫</span>
+      <div><strong>Implants must be quarantined until BI results are available.</strong> Releasing implants before BI results are known is unacceptable and is the exception, not the rule.</div>
+    </div>
+
+    <p class="sub-label">Implant loads — BI and CI requirements</p>
+    <div class="card" style="margin-bottom:1.25rem">
+      <div class="card-title"><span class="card-title-icon icon-red">🦴</span>Every sterilization load containing implants</div>
+      <ul class="detail-list">
+        <li>Must be monitored with a <strong>PCD containing a BI</strong></li>
+        <li>The PCD must also contain a <strong>Class 5 integrating CI</strong></li>
+        <li>Although Class 5 CIs have been correlated to BIs, they do not contain spores and cannot directly measure lethality — therefore, <strong>a Class 5 CI cannot be the sole means of verifying sterilizer efficacy</strong>; both BI and Class 5 CI are required</li>
+        <li>Implants must be <strong>quarantined until BI results are available and interpreted</strong></li>
+      </ul>
+    </div>
+
+    <p class="sub-label">Emergency release of implants</p>
+    <div class="accordion">
+      <div class="acc-head" onclick="toggleAcc(this)">
+        <div class="acc-head-left">
+          <div class="acc-head-tag">Guideline III · Emergency Release</div>
+          <div class="acc-head-title">When implants must be released before BI results are available</div>
+        </div>
+        <span class="acc-chevron">▼</span>
+      </div>
+      <div class="acc-body">
+        <div class="alert alert-gold" style="margin-bottom:12px">
+          <span class="alert-icon">⚠️</span>
+          <div>Emergency release is an exception, not a routine practice. If implants are being released routinely before BI results, the surgery department must take steps to resolve the root cause (e.g., purchasing additional instrument sets).</div>
+        </div>
+        <ul class="detail-list">
+          <li>If implants must be released before BI results (e.g., emergency need for orthopedic screw and plate set): use of a <strong>Class 5 integrating CI provides additional information</strong> about critical parameters</li>
+          <li>Required documentation for emergency release:
+            <ul class="sub-list">
+              <li>The release of the implants must be documented</li>
+              <li>The results of the Class 5 integrating CI must be documented</li>
+              <li>BI results must be documented when available (as routinely performed)</li>
+              <li>Patient information must be included to <strong>trace the release and use of implants to the exact patient</strong></li>
+            </ul>
+          </li>
+          <li>The surgery department and CSPD must have written P&Ps defining emergency situations when implants are released prior to BI results — developed with the infection control officer, surgeon(s), and risk management</li>
+          <li>Annex L of ANSI/AAMI ST79:2010/A4:2013 provides examples of an implant log and an exception form</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="sub-label">Positive BI results — recall protocol</p>
+    <div class="card" style="margin-bottom:1.25rem">
+      <div class="card-title"><span class="card-title-icon icon-red">🔴</span>Positive BI result — required actions</div>
+      <div class="steps">
+        <div class="step-item"><p>A positive BI result initiates a <strong>recall of all items</strong> in the load processed in that specific sterilizer.</p></div>
+        <div class="step-item"><p>All items processed in that sterilizer <strong>since the last negative BI test</strong> must be considered non-sterile.</p></div>
+        <div class="step-item"><p>Surgery personnel assist in <strong>retrieving all affected items from sterile storage</strong> in the surgery department.</p></div>
+        <div class="step-item"><p>All retrieved items are returned to the <strong>CSPD for reprocessing and re-sterilization</strong>.</p></div>
+      </div>
+    </div>
+
+    <hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0">
+
+    <p class="sub-label">Combined glossary — urinary catheterization & monitoring sterility</p>
+    <table class="data-table">
+      <thead><tr><th>Term</th><th>Definition</th></tr></thead>
+      <tbody>
+        <tr><td><strong>CAUTI</strong></td><td>Catheter-associated urinary tract infection — an infection involving any part of the urinary system (urethra, bladder, ureters, kidneys) caused by an indwelling catheter</td></tr>
+        <tr><td><strong>Indwelling catheter</strong></td><td>A flexible rubber or plastic tube inserted into the bladder that remains in place to provide continuous urinary drainage</td></tr>
+        <tr><td><strong>Urinary catheterization</strong></td><td>Insertion of a flexible rubber or plastic tube through the urethra into the bladder for intermittent (straight catheterization) or continuous drainage</td></tr>
+        <tr><td><strong>UTI</strong></td><td>Urinary tract infection — infection involving any part of the urinary system by an opportunistic bacterium; E. coli causes 80–90% of UTIs</td></tr>
+        <tr><td><strong>Escherichia coli (E. coli)</strong></td><td>Rod-shaped, facultative anaerobic bacteria in the large intestine; an opportunistic microbe that causes the majority of UTIs</td></tr>
+        <tr><td><strong>Biological indicator (BI)</strong></td><td>Self-contained monitor using microbes in the spore stage highly resistant to the sterilization process being monitored; the only device providing a direct measure of sterilization lethality</td></tr>
+        <tr><td><strong>Chemical indicator (CI)</strong></td><td>Commercially produced device monitoring the physical conditions of a sterilization cycle; consists of a sensitive ink dye that changes color upon exposure. Demonstrates conditions were met — does not prove sterility.</td></tr>
+        <tr><td><strong>External chemical indicator (Class 1)</strong></td><td>Process indicator placed on the outside of a HDO-assembled package; confirms the package went through a sterilization process; distinguishes processed from unprocessed packages</td></tr>
+        <tr><td><strong>Internal chemical indicator (Classes 3–6)</strong></td><td>CI placed inside a HDO-assembled package to verify the package was exposed to sterilization conditions; retrieved and interpreted by the CST when the package is opened for use</td></tr>
+        <tr><td><strong>Single-variable indicator (Class 3)</strong></td><td>CI designed to show exposure to one sterilization parameter (e.g., temperature only)</td></tr>
+        <tr><td><strong>Multi-variable indicator (Class 4)</strong></td><td>CI designed to react to two or more critical variables of the sterilization cycle</td></tr>
+        <tr><td><strong>Integrating indicator (Class 5)</strong></td><td>CI designed to reach its endpoint when exposed to all critical variables (time, temperature, sterilizing agent); used in conjunction with a BI in loads containing implants; cannot replace a BI</td></tr>
+        <tr><td><strong>Emulating indicator (Class 6)</strong></td><td>CI that changes color when exposed to critical variables for a specified sterilization cycle; within a PCD, may be used to monitor all sterilizer loads</td></tr>
+        <tr><td><strong>Specific test indicator (Class 2)</strong></td><td>Indicators used for specific sterilizer tests; the Bowie-Dick test indicator is the primary example — tests air removal in pre-vacuum steam sterilizers</td></tr>
+        <tr><td><strong>Process challenge device (PCD)</strong></td><td>Replaces the old terms "challenge pack" or "test pack"; refers to the use of BIs and Bowie-Dick air removal test packs for monitoring sterilization loads</td></tr>
+        <tr><td><strong>Physical monitors</strong></td><td>Gauges or displays on the sterilization machine indicating pressure, temperature, and time; data recorded on a record chart or computer printout for each load</td></tr>
+        <tr><td><strong>Steam sterilization</strong></td><td>Sterilization process using steam as the sterilizing agent; monitored with Geobacillus stearothermophilus BIs</td></tr>
+        <tr><td><strong>Ethylene oxide sterilization (EtO)</strong></td><td>An alkylating chemical agent that disrupts the DNA of microorganisms; used as a sterilizing agent for items that cannot withstand heat; monitored with Bacillus atrophaeus BIs</td></tr>
+        <tr><td><strong>CSPD</strong></td><td>Central Sterile Processing Department — where contaminated and non-sterile packages are returned for reprocessing and resterilization</td></tr>
+        <tr><td><strong>Catheter-days</strong></td><td>A measurement used in QI programs to track total days of indwelling catheter use across patients; decreasing catheter-days is a measure of CAUTI QI program success</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<script>
+function showTab(id, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+function toggleAcc(head) {
+  const body = head.nextElementSibling;
+  const chevron = head.querySelector('.acc-chevron');
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  chevron.classList.toggle('open', !isOpen);
+}
+document.addEventListener('DOMContentLoaded', () => {
+  const firstHead = document.querySelector('.acc-head');
+  if (firstHead) toggleAcc(firstHead);
+});
+</script>
+</body>
+</html>
